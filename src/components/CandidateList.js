@@ -8,13 +8,10 @@ const CandidateList = props => {
     const { candidates, onVote, voter } = props;
 
     const getVotedCandidate = () => {
-        console.log(voter);
         if (!voter) return null;
         if (!voter.voted) return null;
         return +voter.vote;
     }
-
-    console.log(getVotedCandidate())
 
     return (
         <div className='container'>

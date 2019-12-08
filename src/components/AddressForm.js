@@ -23,8 +23,8 @@ const AddressForm = props => {
                     type='text'
                     style={{ width: 400, marginRight: 10 }}
                     placeholder='0x73D8F731eC0d3945d807a904Bf93954B82b0d594'
-                    value={address}
                     onChange={onChangeAddress}
+                    value={address}
                 />
                 <Button type='primary' style={{ marginRight: 10 }} onClick={onCheckAddress}>Check</Button>
                 <Button style={{ marginRight: 10 }} onClick={onGiveRight}>Give Right</Button>

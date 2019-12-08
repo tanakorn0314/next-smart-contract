@@ -20,9 +20,9 @@ const HomeScreen = props => {
     const [candidates, setCandidates] = useState();
 
     useEffect(() => {
-        getCurrentAddress();
         getOwnerAddress();
         getCandidates();
+        getCurrentAddress().then(address => { setAddress(address); getVoterInfo(address) });
     }, []);
 
     const getCandidates = async () => {
@@ -46,9 +46,8 @@ const HomeScreen = props => {
     const getCurrentAddress = async () => {
         try {
             const address = await votingController.currentAccount();
-            setAddress(address);
             setCurrentAddress(address);
-            getVoterInfo(address);
+            return address;
         } catch (e) {
             console.error(e);
             setCurrentAddress(null);
@@ -81,7 +80,7 @@ const HomeScreen = props => {
         try {
             const voter = await votingController.getVoter(address);
             setVoter(voter);
-            getCurrentAddress();
+            console.log('tst')
         } catch (e) {
             console.error(e);
             setVoter(null);
@@ -148,7 +147,7 @@ const HomeScreen = props => {
                 owner={owner}
                 candidates={candidates}
                 onChangeAddress={e => setAddress(e.target.value)}
-                onCheckAddress={e => getVoterInfo(address)}
+                onCheckAddress={e => { getVoterInfo(address); getCurrentAddress() }}
                 onGiveRight={e => giveRight(address)}
             />
             <style jsx>{`
