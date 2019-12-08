@@ -1,6 +1,8 @@
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
+//["Taksin", "Yingluck", "Prayuth", "Trump", "Obama"]
+
 contract Voting {
     
     struct Voter {
@@ -30,6 +32,10 @@ contract Voting {
                 voteCount: 0
             }));
         }
+    }
+
+    function numCandidate() public view returns (uint) {
+        return candidates.length;
     }
     
     function giveRightToVote(address voter) public {

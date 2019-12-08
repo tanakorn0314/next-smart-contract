@@ -10,16 +10,25 @@ export default class VotingController {
         this.contract = new this.web3.eth.Contract(ABI, contractAddress);
     }
 
+    async currentAccount() {
+        const accounts = await this.web3.eth.getAccounts();
+        return accounts ? accounts[0] : null;
+    }
+
+    numCandidate() {
+        return this.contract.methods.numCandidate().call();
+    }
+
     getOwnerAddress() {
         return this.contract.methods.owner().call();
     }
 
     getVoter(address) {
-        return this.contract.methods.votes(address).call();
+        return this.contract.methods.voters(address).call();
     }
 
-    getCandidates() {
-        return this.contract.methods.candidates().call();
+    getCandidates(i) {
+        return this.contract.methods.candidates(i).call();
     }
 
     getWinningCandidate() {

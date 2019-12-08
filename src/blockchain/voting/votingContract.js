@@ -1,5 +1,5 @@
 export default {
-    address: '0xDF8EccD0518CcC5e9D9550b5b39c466A90a84B3F',
+    address: '0x572A66CfD86Ea1813E5385D6a4395C7D5d22D358',
     ABI: [
         {
             "constant": false,
@@ -62,6 +62,21 @@ export default {
                 {
                     "internalType": "uint256",
                     "name": "voteCount",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "numCandidate",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
                     "type": "uint256"
                 }
             ],
