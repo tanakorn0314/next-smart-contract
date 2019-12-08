@@ -1,5 +1,8 @@
 # Next JS + Ethereum Smart Contract (Web3js)
 
-## Run script
+## Running script (development)
 npm run dev
+
+## Style Framwork (Ant Design)
+https://ant.design/docs/react/getting-started
 

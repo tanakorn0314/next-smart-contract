@@ -1,8 +1,19 @@
 import React from 'react';
+import Head from 'next/head';
+import MainLayout from '../src/layouts/MainLayout';
+import HomeScreen from '../src/screens/HomeScreen';
 
-const HomePage = props => {
+const HomePage = () => {
     return (
-        <div>Test</div>
+        <>
+            <Head>
+                <title>Blockchain Voting System</title>
+            </Head>
+            <MainLayout>
+                <HomeScreen />
+            </MainLayout>
+        </>
+
     )
 }
 
