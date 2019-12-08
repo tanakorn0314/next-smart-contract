@@ -11,6 +11,7 @@ export default class VotingController {
     }
 
     async currentAccount() {
+        await ethereum.enable(); // request access user account (MetaMask)
         const accounts = await this.web3.eth.getAccounts();
         return accounts ? accounts[0] : null;
     }

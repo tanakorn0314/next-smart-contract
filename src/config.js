@@ -1,4 +1,4 @@
-const network = 'ropsten';
+const network = 'kovan';
 
 const chainId = (network) => {
     switch(network) {
